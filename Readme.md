@@ -1,47 +1,47 @@
-Burrp
+Kaboom
 =============
 
 ### Description
 
-A CLI app to generate food names.
+A CLI app to generate superher names.
 
 ### Usage
 
-To install burrp from npm, run:
+To install kaboom from npm, run:
 
 ```
-$ npm install -g burrp
+$ npm install -g kaboom
 ```
 
 Once its installed try:
 ```
-$ burrp -V
-0.0.2
+$ kaboom -V
+0.0.1
 
-$ burrp -h
+$ kaboom -h
 
-  Usage: burrp [options]
+  Usage: kaboom [options]
 
   Options:
 
     -h, --help        output usage information
     -V, --version     output the version number
-    -n, --number <n>  Number of food names
+    -n, --number <n>  Number of superhero names
 
-$ burrp
-White Wine and Walnut Tart
+$ kaboom
+The Gentle Snipe Wolverine
 
-$ burrp
-Strawberry and Coconut Pie
-Dark Chocolate and Ginger Mooncake
-Strawberry and Kiwi Cake
-Coffee and Caramel Pastry
-Pressure-Cooked White Wine Kebabs
-Pressure-Fried Fennel & Lemon Pie
-Infused White Wine Potatoes
-Cinnamon and Grape Genoise
-Passion Fruit Toast
-Tea-Smoked Mint Roll
+$ kaboom -n 10
+The Fiery Shadow
+The Macho Shade Chief
+The Yellow Sniper Outrageous
+The Giant Catman Magical
+Griffin and Electric Arrow Catman
+The Impossible Captain Smasher
+Spark Plug and Choicemaker Prince
+The Iron Smasher Cat
+The Brass Waspman Watcher
+The Glorious Angel Falcon
 
 ```
 ### Tests
@@ -53,7 +53,7 @@ $ npm test
 
 ### Motivation
 
-I used to name my releases after dishes names, like every single lazy ass developer; I wanted a utility that'd reduce my efforts. So, here it is. :3
+I use to name my releases after random superhero names sometimes, like every single lazy ass developer; I wanted a utility that'd reduce my efforts. So, here it is. :3
 
 ### License
 
