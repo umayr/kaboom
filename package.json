@@ -1,10 +1,10 @@
 {
-    "name": "burrp",
-    "version": "0.0.2",
-    "description": "A tiny cli app to generate food names.",
+    "name": "kaboom",
+    "version": "0.0.1",
+    "description": "A tiny cli app to generate superhero names.",
     "private": false,
     "bin": {
-        "burrp": "./bin/burrp"
+        "kaboom": "./bin/kaboom"
     },
     "scripts": {
         "test": "mocha -R spec"
@@ -12,29 +12,27 @@
     "author": "Umayr Shahid <umayrr@hotmail.co.uk> (https://bandooqwala.com)",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/umayr/burrp.git"
+        "url": "git+https://github.com/umayr/kaboom.git"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/umayr/burrp/issues"
+        "url": "https://github.com/umayr/kaboom/issues"
     },
     "dependencies": {
         "commander": "~2.0.0"
     },
-    "homepage": "https://github.com/umayr/burrp#readme",
-    "main": "bin/burrp",
+    "homepage": "https://github.com/umayr/kaboom#readme",
+    "main": "bin/kaboom",
     "directories": {
         "test": "test"
     },
     "devDependencies": {},
     "keywords": [
-        "food",
+        "superhero",
         "cli",
         "app",
         "food",
         "names",
-        "unique",
-        "dishes",
-        "burp"
+        "unique"
     ]
 }
