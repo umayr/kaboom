@@ -7,7 +7,7 @@ var pckg = require('../package.json');
 
 program
     .version(pckg.version)
-    .option('-n, --number <n>', 'Number of food names', parseInt)
+    .option('-n, --number <n>', 'Number of superhero names', parseInt)
     .parse(process.argv);
 
 program
@@ -22,7 +22,7 @@ program
     .parse(process.argv);
 
 if (program.args.length < 1) {
-    if(program.number === 0){
+    if (program.number === 0) {
         console.log('Zero? Are you kidding me?');
     }
     var __raw = generate(program.number || 1);
@@ -38,14 +38,14 @@ if (program.args.length < 1) {
 
 function generate(n) {
     var src = [
-        ['Baked', 'Barbecued', 'Basted', 'Blanched', 'Braised', 'Breaded', 'Brined', 'Broasted', 'Cooked', 'Cured', 'Deep-Fried', 'Dried', 'Dry-Roasted', 'Engine-Cooked', 'Fire-Grilled', 'Fire-Roasted', 'Fried', 'Gentle-Fried', 'Grilled', 'Infused', 'Marinated', 'Oven-Baked', 'Oven-Grilled', 'Pan-Fried', 'Pickled', 'Poached', 'Pressure-Cooked', 'Pressure-Fried', 'Roasted', 'Sautéed', 'Seared', 'Shallow-Fried', 'Simmered', 'Slow-Cooked', 'Smoked', 'Steamed', 'Stewed', 'Stir-Fried', 'Stuffed', 'Tea-Smoked', 'Tenderized', 'Thermal-Cooked'],
-        ['Almonds & Avocado', 'Apple & Lavender', 'Apples & Mustard', 'Apples & Walnut', 'Apricot & Basil', 'Apricots & Honey', 'Aspargus', 'Basil & Cinnamon', 'Basil & Clove', 'Basil & Lime', 'Basil & Mint', 'Beets & Lemon', 'Beets & Orange', 'Bittersweet', 'Black Pepper', 'Blackberry & Ginger', 'Blueberry', 'Blueberry & Mushroom', 'Butter', 'Carrot & Corriander', 'Carrot & Violet', 'Potatoes &', 'Rice &', 'Pasta & ', 'Carrots & Ginger', 'Casserole of', 'Cheese &', 'Chestnuts &', 'Chilli', 'Cinnamon', 'Cinnamon & Thyme', 'Cocoa & Mushroom', 'Coconut', 'Coconut & Ginger', 'Confit of', 'Coriander & Lemon', 'Cranberry', 'Creamy', 'Cucumber &', 'Cucumber & Lime', 'Curry of', 'Dark Ale', 'Dark Beer', 'Easter-Style', 'Egg & Beans', 'Egg & Beet', 'Egg & Coconut', 'Fennel', 'Fennel & Garlic', 'Fennel & Lemon', 'Fennel & Lime', 'Fennel & Orange', 'Figs & Olive', 'Forest', 'Garlic', 'Garlic & Ginger', 'Garlic & Lime', 'Garlic & Onion', 'Garlic & Rosemary', 'Garlic & Tomato', 'Ginger', 'Ginger & Honey', 'Hazelnut', 'Herbs &', 'Honey', 'Honey & Almond', 'Honey & Nuts', 'Honey & Thyme', 'Honey-Coated', 'Hot & Spicy', 'Hot & Sweet', 'Jasmine', 'Juniper', 'Lemon', 'Lemongrass', 'Light Ale', 'Light Beer', 'Lime', 'Lime & Ginger', 'Lime-Coated', 'Mango & Pine', 'Mint', 'Mint & Berry', 'Mint & Mustard', 'Mint & Orange', 'Mountain', 'Mushroom', 'Mushroom & Apricot', 'Mushroom & Garlic', 'Mushroom & Rosemary', 'Mustard', 'Mustard & Garlic', 'Mustard & Rosemary', 'Mustard & Thyme', 'Northern-Style', 'Nuts &', 'Olive', 'Olives & Mustard', 'Onions & Cream', 'Onions & Tomato', 'Orange', 'Orange & Mustard', 'Orange & Olive', 'Oregano', 'Paprika', 'Parmesan', 'Parsnip & Pear', 'Peach & Vinegar', 'Peanuts &', 'Peas & Mushroom', 'Pepper', 'Pepper & Garlic', 'Pepper & Lime', 'Pepper & Mango', 'Peppermint', 'Pine', 'Pineapple', 'Raspberry & Peanut', 'Red Whine', 'Rhubarb', 'Rosemary', 'Rosemary & Onion', 'Saffron', 'Saffron & Shallot', 'Salt & Pepper', 'Salt & Savory', 'Salted', 'Salty & Sour', 'Savory', 'Sour', 'Sour & Cream', 'Souther-Style', 'Soy', 'Stew of', 'Sugar', 'Sweet & Fresh', 'Sweet & Savory', 'Sweet & Spicy', 'Sweet \'n Sour', 'Thyme & Parsley', 'Tomatos &', 'Truffles &', 'Vanilla', 'Vanilla & Mint', 'Vegetables &', 'Vinegar', 'Walnuts &', 'Wasabi', 'Watercress', 'Western-Style', 'White Wine', 'Yogurt'],
-        ['Bear', 'Beef', 'Boar', 'Chicken', 'Duck', 'Horse', 'Lamb', 'Mammoth', 'Mutton', 'Ostrich', 'Pheasant', 'Pigeon', 'Pork', 'Quail', 'Rabbit', 'Turkey', 'Venison', 'Yak'],
-        ['Clams', 'Cockles', 'Cod', 'Crab', 'Crocodile', 'Alligator', 'Fish', 'Frog', 'Herring', 'Lobster', 'Mussels', 'Oysters', 'Prawns', 'Salmon', 'Scallops', 'Shrimps', 'Snapper', 'Trout', 'Tuna'],
-        ['Bake', 'Bread', 'Bruschetta', 'Buns', 'Calzone', 'Chestnuts', 'Chutney', 'Flatbread', 'Forest Mushrooms', 'Gratin', 'Kebabs', 'Lasagne', 'Linguine', 'Moussaka', 'Nut Mix', 'Omelette', 'Pasta', 'Pie', 'Pizza', 'Potato Wedges', 'Potatoes', 'Rice', 'Risotto', 'Roll', 'Salad', 'Sandwich', 'Scrambled Egg', 'Soup', 'Spring Greens', 'Spring Vegetables', 'Stuffed Bread', 'Taco', 'Tart', 'Tofu', 'Tortilla', 'Vegetable Mix', 'Vegetables', 'Walnuts', 'Winter Greens', 'Winter Vegetables'],
-        ['Almond', 'Apple', 'Avocado', 'Banana', 'Blueberry', 'Caramel', 'Cardamom', 'Cashew', 'Cherry', 'Chestnut', 'Chocolate', 'Cinnamon', 'Cocoa', 'Coconut', 'Coffee', 'Cranberry', 'Dark Chocolate', 'Date', 'Elderberry', 'Ginger', 'Gooseberry', 'Grape', 'Grapefruit', 'Guava', 'Hazelnut', 'Honey', 'Kiwi', 'Lemon', 'Licorice', 'Lime', 'Mandarin', 'Mango', 'Melon', 'Milk Chocolate', 'Mint', 'Nutmeg', 'Orange', 'Papaya', 'Passion Fruit', 'Peach', 'Peanut', 'Pecan', 'Pineapple', 'Pistachio', 'Plum', 'Praline', 'Raspberry', 'Red Wine', 'Rum', 'Saffron', 'Strawberry', 'Vanilla', 'Walnut', 'White Chocolate', 'White Wine'],
-        ['Bombe', 'Bonbons', 'Bread', 'Buns', 'Cake', 'Candy', 'Cheesecake', 'Cobbler', 'Cone', 'Cookies', 'Crispies', 'Crumble', 'Custard', 'Delight', 'Doughnut', 'Fruit Salad', 'Fruitcake', 'Fudge', 'Genoise', 'Gingerbread', 'Ice Cream', 'Ice Lollies', 'Jam', 'Jelly', 'Milk', 'Molten Cake', 'Mooncake', 'Pancakes', 'Pastry', 'Pavlova', 'Pie', 'Pound Cake', 'Pud', 'Pudding', 'Roll', 'Snacks', 'Sorbet', 'Soufflé', 'Split', 'Steamed Pudding', 'Strudel', 'Sundae', 'Surprise', 'Tart', 'Tarte Tatin', 'Toast', 'Toffee', 'Trifle', 'Wafer', 'Waffles', 'Whip', 'Yogurt']
+        ["The Accidental", "The Ancient", "The Aqua", "The Awesome", "The Black", "The Blue", "The Brass", "The Brave", "The Broad", "The Broken", "The Bronze", "The Calm", "The Clever", "The Cold", "The Colossal", "The Confident", "The Cool", "The Copper", "The Crimson", "The Dapper", "The Dark", "The Defiant", "The Dramatic", "The Eager", "The Earth", "The Earthen", "The Electric", "The Electron", "The Elegent", "The Ethereal", "The Fabulous", "The Famous", "The Fancy", "The Fantastic", "The Fast", "The Fearless", "The Fiery", "The Fire", "The Galactic", "The Gentle", "The Giant", "The Gigantic", "The Glorious", "The Godly", "The Golden", "The Good", "The Gorgeous", "The Gray", "The Green", "The Heavenly", "The Heavy", "The Honorable", "The Hot", "The Huge", "The Hypnotic", "The Ice", "The Impossible", "The Incredible", "The Infamous", "The Intelligent", "The Iron", "The Jade", "The Jolly", "The Kind", "The Light", "The Long", "The Lucky", "The Macho", "The Magical", "The Magnificent", "The Majestic", "The Mammoth", "The Marked", "The Marvelous", "The Merciful", "The Mighty", "The Misty", "The Mysterious", "The Nifty", "The Nimble", "The Nuclear", "The Old", "The Orange", "The Outrageous", "The Pink", "The Proud", "The Purple", "The Quantum", "The Quick", "The Quiet", "The Rapid", "The Red", "The Righteous", "The Royal", "The Scarlet", "The Silver", "The Smooth", "The Spectacular", "The Steel", "The Storm", "The Swift", "The Terrific", "The Thunder", "The Vengeful", "The Voiceless", "The Wacky", "The Water", "The Whispering", "The White", "The Wise", "The Yellow"],
+        ["Robin", "Owl", "Vulture", "Condor", "Falcon", "Merlin", "Eagle", "Hawk", "Swan", "Ibis", "Crane", "Snipe", "Macaw", "Amazon", "Nighthawk", "Nightowl", "Monarch", "Lord", "Crow", "Raven", "Swallow", "Starling", "Sparrow", "Ant", "Antman", "Wasp", "Phoenix", "Waspman", "Grasshopper", "Cricket", "Beetle", "Assassin", "Mantis", "Mothman", "Moth", "Termite", "Dragonfly", "Elephantman", "Wolf", "Wolfman", "Bat", "Rhino", "Rhinoceros", "Cat", "Catman", "Lynx", "Gorilla", "Leopard", "Armadillo", "Bear", "Tiger", "Lion", "Fox", "Raccoon", "Ox", "Oxman", "Puma", "Panther", "Wolverine", "Cheetah", "Mongoose", "Jackal", "Hornet", "Warrior", "Fighter", "Angel", "Devil", "Guardian", "Protector", "Champion", "Defender", "Saviour", "Guard", "Watcher", "Slayer", "Killer", "Soldier", "Marksman", "Sniper", "Commando", "Gunner", "Mercenary", "Scout", "Veteran", "Sentinel", "Shepherd", "Warden", "Keeper", "Watchman", "Magician", "Charmer", "Conjurer", "Enchanter", "Genius", "Illusionist", "Prophet", "Seer", "Shaman", "Siren", "Wizard", "Mage", "Master", "Mastermind", "Prodigy", "Sage", "Wonder", "Wonderman", "Whiz", "Spectacle", "Duke", "Baron", "Prince", "Shield", "Sword", "Dagger", "Trident", "Knuckles", "Daggers", "Swordsman", "Scimitar", "Katana", "Axeman", "Scepter", "Hammer", "Gladiator", "Shadow", "Shade", "Gloom", "Spy", "Agent", "Detective", "Mole", "Leader", "Vindicator", "Captain", "Chief", "Doctor", "General", "Smasher", "Spirit", "Scorpion", "Spider"],
+        ["Doctor", "Captain", "Doctor", "Captain", "Lord", "Professor", "Professor", "Mister", "Commander", "Master", "Agent", "Master", "Agent", "Chief", "Warden", "", "", "", "", "", "", "", "", "", "", ""],
+        ["Red", "Blue", "Green", "Yellow", "Purple", "Pink", "Gray", "Dark", "Light", "Orange", "Galactic", "Black", "White", "Clever", "Famous", "Infamous", "Brave", "Calm", "Gentle", "Proud", "Dapper", "Eager", "Jolly", "Broad", "Brass", "Copper", "Golden", "Silver", "Bronze", "Iron", "Steel", "Huge", "Mammoth", "Gigantic", "Colossal", "Quiet", "Thundering", "Whispering", "Ancient", "Fast", "Fancy", "Magnificent", "Mysterious", "Old", "Long", "Rapid", "Swift", "Quick", "Broken", "Cold", "Cool", "Hot", "Heavy", "Light", "Good", "Eager", "Fiery", "Elegent", "Electric", "Defiant", "Brave", "Accidental", "Ethereal", "Dramatic", "Awesome", "Impossible", "Incredible", "Intelligent", "Heavenly", "Honorable", "Huge", "Hypnotic", "Gentle", "Giant", "Glorious", "Godly", "Gorgeous", "Fabulous", "Fancy", "Fantastic", "Fearless", "Kind", "Lucky", "Macho", "Magical", "Majestic", "Marked", "Marvelous", "Mighty", "Messy", "Merciful", "Misty", "Nifty", "Nimble", "Outrageous", "Confident", "Rapid", "Righteous", "Royal", "Terrific", "Smooth", "Spectacular", "Wacky", "Wise", "Vengeful", "Voiceless", "Unarmed", "Armed", "Nuclear", "Scarlet", "Quantum", "Electron", "Crimson", "Fire", "Ice", "Earth", "Earthen", "Water", "Aqua", "Storm", "Thunder"],
+        ["Robin", "Owl", "Vulture", "Condor", "Falcon", "Merlin", "Eagle", "Hawk", "Swan", "Ibis", "Phoenix", "Crane", "Snipe", "Macaw", "Amazon", "Nighthawk", "Nightowl", "Monarch", "Lord", "Crow", "Raven", "Swallow", "Starling", "Sparrow", "Ant", "Antman", "Wasp", "Waspman", "Grasshopper", "Cricket", "Beetle", "Assassin", "Mantis", "Mothman", "Moth", "Termite", "Dragonfly", "Elephantman", "Wolf", "Wolfman", "Bat", "Rhino", "Rhinoceros", "Cat", "Catman", "Lynx", "Gorilla", "Leopard", "Armadillo", "Bear", "Tiger", "Lion", "Fox", "Raccoon", "Ox", "Oxman", "Puma", "Panther", "Wolverine", "Cheetah", "Mongoose", "Jackal", "Hornet", "Warrior", "Fighter", "Angel", "Devil", "Guardian", "Protector", "Champion", "Defender", "Saviour", "Watcher", "Slayer", "Killer", "Sentinel", "Shepherd", "Magician", "Charmer", "Conjurer", "Enchanter", "Genius", "Illusionist", "Prophet", "Mastermind", "Prodigy", "Sage", "Wonder", "Spectacle", "Shield", "Sword", "Dagger", "Trident", "Knuckles", "Daggers", "Swordsman", "Scimitar", "Katana", "Axeman", "Scepter", "Hammer", "Shadow", "Shade", "Gloom", "Mole", "Smasher", "Spirit", "Scorpion", "Spider"],
+        ["Frost", "Golden Hope", "Hope", "Elemental", "Impossible Girl", "Griffin", "Tecton", "Captain Atomic", "Titanio", "Solar Flare", "Alley Cat", "Snow Storm", "Absolute Zero", "The Great Defender", "Timeline", "Skylar Storm", "Optimo", "Remix", "Citadel", "Alpha Dog", "Brain Matter", "Dark Warrior", "The Crusher", "Owl", "Incognito", "Gray Granite", "Gamma", "Spark Plug", "Silver Shield", "Quiver", "Smoke", "Captain Quake", "Icicle", "Metanite", "Blaze", "Fantasia", "Phantasm", "Sparks", "Ace", "Amethyst Heart", "Animalia", "Armed", "Black Bat", "Black Cat", "Black Knight", "Black Phoenix", "Black Star", "Blitzfire", "Boler", "Bolt", "Brass Bison", "Bright Shadow", "Broken Watchman", "Choicemaker", "Cleanser", "Crazy Eight", "Creature", "Criss Cross", "Dark Flame", "Dark Omen", "Dark Titan", "Dazzler", "Deadnite", "Death Roach", "Doctor Chronos", "Doctor Dynasty", "Doctor Juggernaut", "Doctor Titanium", "Dragon Boy", "Dragon Spectre", "Dragonloom", "Dragontooth", "Electric Arrow", "Eltrocus", "Ethereal Phoenix", "Ethereal Titan", "Fallen Pheonix", "Fiery Falcon", "Firebird", "Freefall", "Frozenstar", "Galactic Gargoyle", "Gecko", "Griffin", "Heavy Step", "Helon", "Heloth", "Hopewing", "Ice Raven", "Iron Archer", "Iron Assassin", "Jade Stranger", "King Scorp", "Mad Manta", "Makeshift", "Marked Stranger", "Master Defiance", "Mighty Mamba", "Mister Penance", "Mister X", "Mister Y", "Misty Manta", "Moon Halo", "Moonshadow", "Nightbolt", "Nightleaf", "Nightquake", "Nightwave", "Orothos", "Osa", "Peacebringer", "Phantom", "Phantom Archer", "Phantom Kid", "Phantom Spectre", "Phoen-X", "Quantum Colossus", "Quantum Commander", "Razor", "Red Heart", "Rosethorn", "Saber", "Saberleaf", "Sage", "Savior", "Scarlet Feathers", "Scarlet Horse", "Scarlet King", "Scarlet Sentinel", "Shaden", "Shadow", "Shadowleaf", "Shadowstar", "Silver Goliath", "Silver Shepherd", "Silver Wolf", "Snow Raven", "Spitfire", "Spur", "Star Sentinel", "Starbright", "Stareye", "Starlight", "Starry Night", "Sunspot", "Switcher", "The Hunter", "The Last One", "Thornhead", "Thunder Hawk", "Thunderclap", "Thundering Whisper", "Venom", "Venombite", "Voiceless Stranger", "Wi-Fire", "Wild Tornado", "Wildfire", "Wildflame", "Karma"]
     ];
+
     var __random = [];
     var __names = [];
     var __name = '';
@@ -65,15 +65,15 @@ function generate(n) {
             }
         } else {
             __random[0] = Math.floor(Math.random() * src[5].length);
-            __random[1] = Math.floor(Math.random() * src[6].length);
+            __random[1] = Math.floor(Math.random() * src[1].length);
             if (i < 8) {
                 __random[2] = Math.floor(Math.random() * src[5].length);
                 while (__random[2] === __random[0]) {
                     __random[2] = Math.floor(Math.random() * src[5].length);
                 }
-                __name = src[5][__random[0]] + ' and ' + src[5][__random[2]] + ' ' + src[6][__random[1]];
+                __name = src[5][__random[0]] + ' and ' + src[5][__random[2]] + ' ' + src[1][__random[1]];
             } else {
-                __name = src[5][__random[0]] + ' ' + src[6][__random[1]];
+                __name = src[5][__random[0]] + ' ' + src[1][__random[1]];
             }
         }
         __names.push(__name);
@@ -94,14 +94,14 @@ function clean(arr) {
     return arr;
 }
 
-function verify(arr){
+function verify(arr) {
     var __clean = clean(arr);
 
-    if(arr.length !== __clean.length){
+    if (arr.length !== __clean.length) {
         __clean.concat(generate(arr.length - __clean.length));
         return verify(__clean);
     }
-    else{
+    else {
         return __clean;
     }
 }
