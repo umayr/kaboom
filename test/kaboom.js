@@ -4,8 +4,8 @@ var assert = require('assert');
 var exec = require('child_process').exec;
 var path = require('path');
 
-describe('burrp', function () {
-    var cmd = 'node ' + path.join(__dirname, '../bin/burrp') + ' ';
+describe('kaboom', function () {
+    var cmd = 'node ' + path.join(__dirname, '../bin/kaboom') + ' ';
     console.log(cmd);
 
     it('--help should run without errors', function (done) {
